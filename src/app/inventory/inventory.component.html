@@ -1,0 +1,84 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style = "color: aliceblue;">Inventory</h1>
+        <div class="d-flex">
+            <button routerLink = "/dashboard" class="btn btn-warning mx-2">Patient</button>
+            <button (click) ="clickAddInventory()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">Add Inventory</button>
+            <button routerLink = "/login" class="btn btn-danger mx-2">Logout</button>
+        </div>
+    </div>
+</nav>
+
+<table class = "table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Stock ID</th>
+            <th scope="col">Item</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Reorder Quantity</th>
+            <th scope="col">Cost</th>
+            <th scope="col">Inventory Value</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let row of inventoryData">
+            <td>{{row.id}}</td>
+            <td>{{row.item}}</td>
+            <td>{{row.quantity}}</td>
+            <td>{{row.reorder}}</td>
+            <td>{{row.cost}}</td>
+            <td>{{row.value}}</td>           
+            <td>
+                <button (click)="onEdit(row)" style="color: aliceblue;" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info">Edit</button>
+                <button (click)="deleteInventory(row)" class="btn btn-danger mx-3">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Inventory Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup] = "formValue">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Item Name</label>
+                  <input type="text" formControlName="item" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Quantity</label>
+                  <input type="text" formControlName="quantity" class="form-control" id="exampleInputPassword1">
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Reorder Quantity</label>
+                  <input type="text" formControlName="reorder" class="form-control" id="exampleInputPassword1">
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Cost</label>
+                  <input type="text" formControlName="cost" class="form-control" id="exampleInputPassword1">
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Value</label>
+                  <input type="text" formControlName="value" class="form-control" id="exampleInputPassword1">
+                </div>
+
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" *ngIf="showAdd" (click)="postInventoryDetails()" class="btn btn-primary">Add</button>
+          <button type="button" *ngIf="showUpdate" (click)="updateInventoryDetails()" class="btn btn-primary">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>

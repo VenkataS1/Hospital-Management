@@ -1,0 +1,86 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "firstName": "Rebeeca",
+      "lastName": "Syndney",
+      "email": "Rebeccaqueen@gmail.com",
+      "mobile": "7322493777",
+      "age": "16"
+    },
+    {
+      "id": 3,
+      "firstName": "Harshil",
+      "lastName": "Patel",
+      "email": "burnerharshil@gmail.com",
+      "mobile": "7323992438",
+      "age": "26"
+    },
+    {
+      "id": 4,
+      "firstName": "Venkata",
+      "lastName": "Sanikommu",
+      "email": "svsthejesh@gmail.com",
+      "mobile": "7325817082",
+      "age": "19"
+    }
+  ],
+  "signupUsers": [
+    {
+      "firstname": "Harshil",
+      "lastname": "Burner",
+      "address": "13 drinking brook road, Monmouth Junction",
+      "age": 26,
+      "email": "burnerharshil@gmail.com",
+      "password": "Burner$12",
+      "mobile": 7326789241,
+      "id": 4
+    },
+    {
+      "firstname": "Esha",
+      "lastname": "Dhruv",
+      "address": "133 leah ct",
+      "age": 20,
+      "email": "esha_dhruv@yahoo.com",
+      "password": "Esha$12",
+      "mobile": 7323254177,
+      "id": 5
+    },
+    {
+      "firstname": "Vishnu",
+      "lastname": "Menon",
+      "address": "36 heron ct",
+      "age": 19,
+      "email": "vishnumenon2003@gmail.com",
+      "password": "Vishnu$12",
+      "mobile": 7324256666,
+      "id": 6
+    }
+  ],
+  "profile": [
+    {
+      "id": 1,
+      "item": "Syringe",
+      "quantity": "47",
+      "reorder": "23",
+      "cost": "$57.50",
+      "value": "$175"
+    },
+    {
+      "id": 2,
+      "item": "Surgical Kits",
+      "quantity": "12",
+      "reorder": "6",
+      "cost": "$19,200",
+      "value": "$57,600"
+    },
+    {
+      "id": 3,
+      "item": "Ventilator",
+      "quantity": "6",
+      "reorder": "2",
+      "cost": "$49,000",
+      "value": "$196,000"
+    }
+  ]
+}

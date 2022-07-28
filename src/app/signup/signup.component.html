@@ -1,0 +1,61 @@
+<div class = "container">
+    <div class = "row">
+        <div class = "col-md-6">
+            <div class = "card"> 
+                <div class="text-center">
+                    <h1>Sign Up</h1>
+                    <h6>Register Yourself!!</h6>
+                </div>
+                <form>
+                    <form [formGroup] = "signupForm" (ngSubmit) = "signUp()">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">First Name</label>
+                            <input formControlName = "firstname" type="text" class="form-control" id="exampleInputPassword1" ngModel pattern="^[a-zA-Z ]*$" placeholder = "First Name">
+                            <span class = "text-danger" *ngIf = "signupForm.controls['firstname'].dirty && signupForm.hasError('required','firstname')">*First name is required</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Last Name</label>
+                            <input formControlName = "lastname" type="text" class="form-control" id="exampleInputPassword1" ngModel pattern="^[a-zA-Z ]*$" placeholder = "Last Name">
+                            <span class = "text-danger" *ngIf = "signupForm.controls['lastname'].dirty && signupForm.hasError('required','lastname')">*Last name is required</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Address</label>
+                            <input formControlName = "address" type="text" class="form-control" id="exampleInputPassword1" placeholder = "Address">
+                            <span class = "text-danger" *ngIf = "signupForm.controls['address'].dirty && signupForm.hasError('required','address')">*Address is required</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Age</label>
+                            <input formControlName = "age" type="number" class="form-control" id="exampleInputPassword1" placeholder = "Age">
+                            <span class = "text-danger" *ngIf = "signupForm.controls['age'].dirty && signupForm.hasError('required','age')">*Age is required</span>
+                          </div>
+
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Mobile Number</label>
+                          <input formControlName = "mobile" type="number" class="form-control" id="exampleInputPassword1" ngModel pattern="^[0-9]{10}$" placeholder = "Mobile Number">
+                          <span class = "text-danger" *ngIf = "signupForm.controls['mobile'].dirty && signupForm.hasError('required','mobile')">*Mobile Number is required</span>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Email address</label>
+                          <input formControlName = "email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder = "Enter Email Address">
+                          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                          <span class = "text-danger" *ngIf = "signupForm.controls['email'].dirty && signupForm.hasError('required','email')">*Email ID is required</span>
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input formControlName = "password" type="password" class="form-control" id="exampleInputPassword1" ngModel pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$" placeholder = "Password">
+                          <div id="emailHelp" class="form-text">Password must contain atleast 6 characters, 1 capital letter, 1 number, and 1 special character</div>
+                          <span class = "text-danger" *ngIf = "signupForm.controls['password'].dirty && signupForm.hasError('required','password')">*Password is required</span>
+                        </div>
+                        <button type="submit" [disabled] = "!signupForm.valid" class="btn btn-primary mb-2">Sign Up</button>
+                      </form>
+                      <a style = "color: #fff; margin-top: 10px" routerLink = "/login">Already registered? Click to login!!</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
